@@ -1,0 +1,22 @@
+---
+manifest_version: "1"
+name: demo
+integrity:
+  network_seed: ~
+  properties:
+    progenitor: ~
+  origin_time: 1696627125761167
+  zomes:
+    - name: posts_integrity
+      hash: ~
+      bundled: "../../../target/wasm32-unknown-unknown/release/posts_integrity.wasm"
+      dependencies: ~
+      dylib: ~
+coordinator:
+  zomes:
+    - name: posts
+      hash: ~
+      bundled: "../../../target/wasm32-unknown-unknown/release/posts.wasm"
+      dependencies:
+        - name: posts_integrity
+      dylib: ~

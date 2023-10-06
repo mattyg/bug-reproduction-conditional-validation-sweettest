@@ -2,4 +2,17 @@
 manifest_version: "1"
 name: bug-reproduction-template
 description: ~
-roles: []
+roles:
+  - name: demo
+    provisioning:
+      strategy: create
+      deferred: false
+    dna:
+      bundled: "../dnas/demo/workdir/demo.dna"
+      modifiers:
+        network_seed: ~
+        properties: ~
+        origin_time: ~
+        quantum_time: ~
+      installed_hash: ~
+      clone_limit: 0
